@@ -7,11 +7,17 @@ using DWPS.Definitions.Attributes;
 
 namespace DWPS.Definitions.Controls
 {
-    public class CustomServerControl
+    public abstract class CustomServerControl
     {
-        public string Name { get; }
+        public string Name { get; private set; }
 
-        public List<ElementAttribute> ControlAttributes;
+        public List<ElementAttribute> ControlAttributes { get; private set; }
+
+        public CustomServerControl(string controlName,List<ElementAttribute> attributes)
+        {
+            Name = controlName;
+            ControlAttributes = attributes;
+        }
 
         public override string ToString()
         {
@@ -36,5 +42,6 @@ namespace DWPS.Definitions.Controls
             actualControlScript.Append(">");
             return actualControlScript.ToString();
         }
+        public string GetHTMLRepresentation();
     }
 }

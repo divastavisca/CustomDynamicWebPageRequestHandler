@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CustomButton.cs" />
     <Compile Include="Controls\CustomServerControl.cs" />
     <Compile Include="Attributes\ElementAttribute.cs" />
     <Compile Include="Attributes\ID.cs" />
